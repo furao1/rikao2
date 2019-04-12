@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header"></header>
+        <main class="main">
+            <div class="box">
+                <dl class="span">
+                    <dt></dt>
+                    <dd>电源</dd>
+                </dl>
+                <dl class="span">
+                    <dt></dt>
+                    <dd>首页</dd>
+                </dl>
+                <dl class="span">
+                    <dt></dt>
+                    <dd>菜单</dd>
+                </dl>
+                <dl class="span">
+                    <dt></dt>
+                    <dd>截屏</dd>
+                </dl>
+            </div>
+            <ul>
+                <li>滑动控制上下左右</li>
+                <li>滑动控制上下左右</li>
+                <li>滑动控制上下左右</li>
+                <li>滑动控制上下左右</li>
+            </ul>
+        </main>
+    </div>
+</body>
+<script src="./js/flexible.js"></script>
+<script>
+    let spans = document.querySelectorAll('.span');
+    let lis = document.querySelectorAll('li');
+    spans.forEach(function(item, index) {
+        item.onclick = function() {
+            let arr = spans[index];
+            arr.style.color = "blue";
+            arr.previousElementSiblings.style.color = "#000";
+            lis.forEach(function(ite, i) {
+                ite[i].style.display = "none";
+                ite[i].nextSibling.style.display = "block";
+            })
+        }
+    })
+</script>
+
+</html>
